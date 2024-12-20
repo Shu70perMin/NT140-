@@ -1,0 +1,6 @@
+PING nhom9.shop (145.223.108.21) 56(84) bytes of data.
+64 bytes from 145.223.108.21: icmp_seq=1 ttl=255 time=567 ms
+
+--- nhom9.shop ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 566.895/566.895/566.895/0.000 ms

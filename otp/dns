@@ -1,0 +1,27 @@
+
+______ _   _  _____ 
+|  _  \ \ | |/  ___|
+| | | |  \| |\ '--. 
+| | | | . ' | '--. \    (scan with dnsenum)
+| |/ /| |\  |/\__/ /
+|___/ \_| \_/\____/ 
+
+  dnsenum VERSION:1.3.1
+  -----   nhom9.shop   -----
+  
+  Host's addresses:
+  ~~~~~~~~~~~~~~~~~~
+  nhom9.shop.                              1421     IN    A        145.223.108.21
+  
+  Name Servers:
+  ~~~~~~~~~~~~~~
+  ns2.dns-parking.com.                     4337     IN    A        162.159.25.42
+  ns1.dns-parking.com.                     6733     IN    A        162.159.24.201
+  
+  Mail (MX) Servers:
+  ~~~~~~~~~~~~~~~~~~~
+  
+  Trying Zone Transfers and getting Bind Versions:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Trying Zone Transfer for nhom9.shop on ns2.dns-parking.com ... 
+  Trying Zone Transfer for nhom9.shop on ns1.dns-parking.com ... 

@@ -1,0 +1,60 @@
+  [+] Searching everywhere
+  [+] Searching in Bing: 50 results
+  [+] Searching in Bing: 100 results
+  [+] Searching in Yahoo: 101 results
+  [+] Searching in Baidu: 10 results
+  [+] Searching in Baidu: 20 results
+  [+] Searching in Baidu: 30 results
+  [+] Searching in Baidu: 40 results
+  [+] Searching in Baidu: 50 results
+  [+] Searching in Baidu: 60 results
+  [+] Searching in Baidu: 70 results
+  [+] Searching in Baidu: 80 results
+  [+] Searching in Baidu: 90 results
+  [+] Searching in Baidu: 100 results
+  [+] Searching in Linkedin
+  [+] Searching in Bing + Linkedin: 50 results
+  [+] Searching in Bing + Linkedin: 100 results
+  [+] Searching in Google + Linkedin: 100 results
+  [+] Searching in Github
+  [+] Searching in Bing + Github: 50 results
+  [+] Searching in Bing + Github: 100 results
+  [+] Searching in Google + Github: 100 results
+  [+] Searching in Instagram
+  [+] Searching in Bing + Instagram: 50 results
+  [+] Searching in Bing + Instagram: 100 results
+  [+] Searching in Google + Instagram: 100 results
+  [+] Searching in Google: 100 results
+  [+] Searching in Reddit
+  [+] Searching in Bing + Reddit: 50 results
+  [+] Searching in Bing + Reddit: 100 results
+  [+] Searching in Google + Reddit: 100 results
+  [+] Searching in Twitter
+  [+] Searching in Bing + Twitter: 50 results
+  [+] Searching in Bing + Twitter: 100 results
+  [+] Searching in Google + Twitter: 100 results
+  [+] Searching in Youtube
+  [+] Searching in Bing + Youtube: 50 results
+  [+] Searching in Bing + Youtube: 100 results
+  [+] Searching in Google + Youtube: 100 results
+  [+] Emails found: 4
+  20@nhom9.shop
+  2522@nhom9.shop
+  github.com+@nhom9.shop
+  youtube.com+@nhom9.shop
+  [+] Searching everywhere
+  [+] Searching in Bing: 50 results
+  HTTPConnectionPool(host='www.bing.com', port=80): Max retries exceeded with url: /search?q=%40nhom9.shop&count=50&first=50 (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f2dfd913710>: Failed to resolve 'www.bing.com' ([Errno -3] Temporary failure in name resolution)"))
+  [+] Searching everywhere
+  [+] Searching in Bing: 50 results
+  [+] Searching in Bing: 100 results
+  HTTPSConnectionPool(host='search.yahoo.com', port=443): Max retries exceeded with url: /search?p=%40nhom9.shop&n=100&ei=UTF-8&va_vt=any&vo_vt=any&ve_vt=any&vp_vt=any&vd=all&vst=0&vf=all&vm=p&fl=0&fr=yfp-t-152&xargs=0&pstart=1&b=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f993bc41f50>: Failed to resolve 'search.yahoo.com' ([Errno -3] Temporary failure in name resolution)"))
+  [+] Searching everywhere
+  [+] Searching in Bing: 50 results
+  [+] Searching in Bing: 100 results
+  [+] Searching in Yahoo: 101 results
+  [+] Searching in Baidu: 10 results
+  HTTPSConnectionPool(host='www.baidu.com', port=443): Max retries exceeded with url: /search/error.html (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fafed37b310>: Failed to resolve 'www.baidu.com' ([Errno -3] Temporary failure in name resolution)"))
+  [+] Searching everywhere
+  [+] Searching in Bing: 50 results
+  HTTPConnectionPool(host='www.bing.com', port=80): Max retries exceeded with url: /search?q=%40nhom9.shop&count=50&first=50 (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7f555e55a450>: Failed to resolve 'www.bing.com' ([Errno -3] Temporary failure in name resolution)"))

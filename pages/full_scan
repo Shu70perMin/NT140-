@@ -1,0 +1,184 @@
+#! /bin/bash
+
+# ------------------funcions()
+bash apps/null
+pr(){
+clear
+echo `tput setaf 111`"
+                ___________    .__                __                  
+                \__    ___/___ |__| ___________ _/  |_  ________ __  
+                  |    |_/ __ \|  |/  ___/\__  \\   __\/  ___/  |  \   
+                  |    |\  ___/|  |\___ \  / __ \|  |  \___ \|  |  /   
+                  |____| \___  >__/____  >(____  /__| /____  >____/    
+                        \/        \/      \/          \/                                    
+         --------------------------------------------------------------------------
+
+"
+}
+pr
+echo `tput setaf 202`
+sleep .12
+
+read -p' ┌─[Please Enter Your URL]
+ └──╼ ' url
+if [ "$url" == "" ]
+then
+while [ 1 == 1 ]
+do
+read -p' ┌─[Please Enter Your URL]
+ └──╼ ' url
+if [ "$url" != "" ]
+then
+break
+fi
+done
+fi
+
+
+
+url=`echo $url | sed 's/https:\/\///' | sed 's/http:\/\///' | sed 's/^/oupuput/' | sed 's/oupuputwww.//' | sed 's/oupuput//' | cut -d '/' -f 1`
+domain=$url
+ping -c 1 $domain > files/ping 2>/dev/null
+ip=`cat files/ping | grep $domain |grep "("| awk '{print $3}' | cut -d "(" -f 2 | sed 's/)//'|grep -v "from"`
+export domain
+
+web=`curl -I http://$url -s | head -1 | awk '{print $2}'`
+if [ "$web" == 200 ]
+then
+url=http://$url
+export url
+uruy=$url
+htos="http://"
+fi
+web=`curl -I https://$url -s | head -1 | awk '{print $2}'`
+if [ "$web" == 200 ]
+then
+url=https://$url
+export url
+uruy=$url
+htos=htos="https://"
+fi
+web=`curl -I http://www.$url -s | head -1 | awk '{print $2}'`
+if [ "$web" == 200 ]
+then
+url=http://www.$url
+export url
+uruy=$url
+htos="http://"
+fi
+web=`curl -I https://www.$url -s | head -1 | awk '{print $2}'`
+if [ "$web" == 200 ]
+then
+url=https://www.$url
+export url
+uruy=$url
+htos="https://"
+fi
+
+
+if [ "$uruy" == "" ]
+then
+echo ""
+echo `tput setaf 160` "Your URL is Invalid :)" `tput sgr0`
+echo ""
+sleep 1
+exit
+fi
+pr
+
+# ----------whois----------
+
+echo `tput setaf 248` "
+  ██     ██ ██   ██  ██████  ██ ███████ 
+  ██     ██ ██   ██ ██    ██ ██ ██      
+  ██  █  ██ ███████ ██    ██ ██ ███████   (with whois command) 
+  ██ ███ ██ ██   ██ ██    ██ ██      ██ 
+   ███ ███  ██   ██  ██████  ██ ███████                                       
+                                      "
+whois $domain > files/whois
+echo "┎╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸"
+cat files/whois | grep ":" | grep -v "   " |grep -v "whois" |grep -v "NOTICE:"|grep -v "more information"| grep -vi "TERMS OF USE:"|grep -v "support the transmission"  > files/whois2
+yoyon=`cat files/whois2`
+if [ "$yoyon" == "" ]
+then
+cat files/whois|grep -v "NOTE" |grep -v ":$"| grep "   " | sed 's/   /  /g'|tee otp/whois|sed "s/^/┃/"
+else
+cat files/whois2|grep -v "NOTE"|grep -v ":$"| sed 's/^/  /'|tee otp/whois| sed 's/^/┃/'
+fi
+echo "┖╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸"
+
+
+
+echo `tput setaf 42`"
+
+
+  ██ ███    ██ ███████  ██████  
+  ██ ████   ██ ██      ██    ██ 
+  ██ ██ ██  ██ █████   ██    ██ 
+  ██ ██  ██ ██ ██      ██    ██ 
+  ██ ██   ████ ██       ██████  
+                              "
+echo "┎╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸"
+
+echo "   	      _     
+             | |    
+__      _____| |__  
+\ \ /\ / / _ \ '_ \ 
+ \ V  V /  __/ |_) |   (scan with whatweb)
+  \_/\_/ \___|_.__/ 
+ " | tee otp/web | sed 's/^/┃/'                  
+whatweb --color=never $url | sed 's/, /\n/g' | sed 's@\[200 OK\]@@' |sed "s@$url@@" | sed 's/  //'| sed 's/^/  /'| tee -a otp/web | sed 's/^/┃/'
+
+
+echo "
+ _     
+       .__  __                                
+  _____|__|/  |_  ____   _____ _____  ______  
+ /  ___/  \   __\/ __ \ /     \\__  \ \____ \ 
+ \___ \|  ||  | \  ___/|  Y Y  \/ __ \|  |_> >
+/____  >__||__|  \___  >__|_|  (____  /   __/ 
+     \/              \/      \/     \/|__|      "
+(python3 apps/sitemap.py $url |  sed 's/^/  /' | tee -a otp/sitemap | sed 's/^/┃/') 2>/dev/null
+
+
+
+echo "┖╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸"
+
+echo `tput setaf 45`"
+
+
+███████  ██████  █████  ███    ██ 
+██      ██      ██   ██ ████   ██ 
+███████ ██      ███████ ██ ██  ██ 
+     ██ ██      ██   ██ ██  ██ ██ 
+███████  ██████ ██   ██ ██   ████ 
+                                  "                                  
+echo "┎╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╸"
+
+
+echo "
+______ _   _  _____ 
+|  _  \ \ | |/  ___|
+| | | |  \| |\ '--. 
+| | | | . ' | '--. \    (scan with dnsenum)
+| |/ /| |\  |/\__/ /
+|___/ \_| \_/\____/ 
+"| tee otp/dns | sed 's/^/┃/' 
+(dnsenum -f files/dns --noreverse --nocolor --threads 10 $domain|sed 's/_/~/g' | grep -v "Brute forcing" | grep -v "class" | grep -v "blocks" | grep -v "\.0/"  | grep -v "../" | grep -v "done" | grep -v "^$" | sed 's/Host/\nHost/' | sed 's/Trying Zone Transfers/\nTrying Zone Transfers/' | sed 's/Name/\nName/'|sed 's/Mail/\nMail/' | tac | tail -n +4 | tac| grep -v "!" | grep -v "Wildcards" | grep -v "Omitting" | grep -v "Maybe " |sed 's/Wildcard /\nWildcard /'| sed 's/^/  /'| tee -a otp/dns|sed 's/^/┃/') 2>/dev/null
+rm $domain\_ips.txt 2>/dev/null
+
+echo "  __  __       _ _    __ _           _           ";
+echo " |  \/  |     (_) |  / _(_)         | |          ";
+echo " | \  / | __ _ _| | | |_ _ _ __   __| | ___ _ __ ";
+echo " | |\/| |/ _\` | | | |  _| | '_ \ / _\` |/ _ \ '__|";
+echo " | |  | | (_| | | | | | | | | | | (_| |  __/ |   ";
+echo " |_|  |_|\__,_|_|_| |_| |_|_| |_|\__,_|\___|_|   ";
+echo "                                                 ";
+echo "                                                 ";
+(python3 apps/EmailFinder/mailfinder.py -d $domain -e all |  sed 's/^/  /' | tee -a otp/mail | sed 's/^/┃/') 2>/dev/null
+
+
+
+
+
+
