@@ -1,0 +1,6 @@
+PING example.com (93.184.215.14) 56(84) bytes of data.
+64 bytes from 93.184.215.14: icmp_seq=1 ttl=53 time=221 ms
+
+--- example.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 221.459/221.459/221.459/0.000 ms

@@ -1,0 +1,39 @@
+
+______ _   _  _____ 
+|  _  \ \ | |/  ___|
+| | | |  \| |\ '--. 
+| | | | . ' | '--. \    (scan with dnsenum)
+| |/ /| |\  |/\__/ /
+|___/ \_| \_/\____/ 
+
+  dnsenum VERSION:1.2.6
+  -----   uit.edu.vn   -----
+  
+  Host's addresses:
+  ~~~~~~~~~~~~~~~~~~
+  uit.edu.vn.                              360      IN    A        118.69.123.140
+  
+  Wildcard detection using: khimzecrxwvz
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  khimzecrxwvz.uit.edu.vn.                 300      IN    A        45.122.249.78
+  khimzecrxwvz.uit.edu.vn.                 300      IN    A        118.69.123.140
+  
+  Name Servers:
+  ~~~~~~~~~~~~~~
+  ns1.pavietnam.vn.                        228      IN    A        112.213.89.3
+  ns2.pavietnam.vn.                        41700    IN    A        222.255.121.247
+  nsbak.pavietnam.net.                     123      IN    A        112.213.89.22
+  
+  Mail (MX) Servers:
+  ~~~~~~~~~~~~~~~~~~~
+  aspmx3.googlemail.com.                   293      IN    A        142.250.141.27
+  aspmx2.googlemail.com.                   293      IN    A        173.194.202.27
+  aspmx.l.google.com.                      293      IN    A        142.251.12.27
+  alt2.aspmx.l.google.com.                 293      IN    A        142.250.141.26
+  alt1.aspmx.l.google.com.                 293      IN    A        173.194.202.27
+  
+  Trying Zone Transfers and getting Bind Versions:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Trying Zone Transfer for uit.edu.vn on nsbak.pavietnam.net ... 
+  Trying Zone Transfer for uit.edu.vn on ns1.pavietnam.vn ... 
+  Trying Zone Transfer for uit.edu.vn on ns2.pavietnam.vn ... 

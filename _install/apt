@@ -1,0 +1,58 @@
+#! /bin/bash
+sudo echo ""
+rm -f apps/screen.png 2> /dev/null
+sudo apt-get update
+sudo apt-get install -y whois
+
+goofile > /dev/null 2> /dev/null
+if [ "$?" == "127" ]
+then
+    sudo apt-get install -y goofile
+fi
+
+git > /dev/null 2> /dev/null
+if [ "$?" == "127" ]
+then
+    sudo apt-get install -y git
+fi
+
+# Kiểm tra và cài đặt Python 3 nếu chưa có
+python3 -h >/dev/null 2>/dev/null
+if [ "$?" == "127" ]
+then
+    sudo apt-get install -y python3
+fi
+
+# Cài đặt setuptools cho Python 3
+sudo apt-get install -y python3-setuptools
+
+go > /dev/null 2> /dev/null
+if [ "$?" == "127" ]
+then
+    sudo apt-get install -y golang
+fi
+
+sqlmap > /dev/null 2> /dev/null
+if [ "$?" == "127" ]
+then
+    sudo apt-get install -y sqlmap
+fi
+
+sudo apt-get install -y openssl
+sudo apt-get install -y whatweb
+sudo apt-get install -y dnsenum
+
+
+# Kiểm tra và cài đặt pip3
+pip3 > /dev/null 2>/dev/null
+if [ "$?" == "127" ]
+then
+    sudo apt-get install -y python3-pip
+fi
+
+# Chạy script cài đặt từ thư mục lib và cài đặt yêu cầu Python
+sudo bash lib/install.sh
+pip3 install -r _install/req.txt
+
+clear
+echo `tput setaf 82` "Installation was Successful !!!" `tput sgr0`
