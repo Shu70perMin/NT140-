@@ -52,7 +52,7 @@ class myparser:
     
 ###################################################################
 
-class EmailHarvester(object):
+class Emailfinder(object):
     
     def __init__(self, userAgent):
         self.plugins = {}
@@ -172,7 +172,7 @@ if __name__ == '__main__':
     filename = ""
     limit = 100       
     engine = args.engine
-    app = EmailHarvester(userAgent)
+    app = Emailfinder(userAgent)
     plugins = app.get_plugins()
 
     all_emails = []
