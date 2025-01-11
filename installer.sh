@@ -14,4 +14,4 @@ echo `tput setaf 196` "Please install apt" `tput sgr0`
 echo ""
 exit
 fi
-chmod +x ./swit-scanner
+chmod +x ./teisatsu
